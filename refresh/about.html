@@ -7,6 +7,19 @@
             body {
                 font-family: 'Ubuntu Mono', serif;
                 margin: 0;
+                font-size: 30px;
+            }
+
+            .block-container {
+                margin-top: 50px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 25px;
+            }
+
+            .paragraph-container {
+                text-align: center;
             }
         </style>
 
@@ -16,9 +29,26 @@
     <body>
         <img src="https://i.imgur.com/j9Ilfjw.jpg?1" style="width: 100%;" />
 
-        <div style="margin-top: 20px; font-size: 55px; display: flex; align-items: center; flex-direction: column;">
-            <span style="text-align: center;">We hold the faith which is common to all believers.</span>
+        <div class="block-container">
+            <span class="paragraph-container">
+                We hold the faith which is common to all believers.
+            </span>
+
             <span>(Titus 1:4; Jude 3)</span>
+        </div>
+
+        <div class="block-container" style="background-color: lightblue;">
+            <span>
+                THE BIBLE
+            </span>
+            
+            <span class="paragraph-container" style="margin-top: 50px">
+                The Bible is the complete divine revelation inspired word-by-word by God through the Holy Spirit.
+            </span>
+
+            <span style="margin-top: 100px;">
+                2 Peter 1:21; 2 Timothy 3:16
+            </span>
         </div>
     </body>
 </html>
