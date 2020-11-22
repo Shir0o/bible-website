@@ -1775,17 +1775,14 @@
 		</div>
 
 		<script>
-			document.getElementById('genesis-' + sessionStorage.getItem('chapter_number')).scrollIntoView();
+			const urlParams = new URLSearchParams(window.location.search);
+			const chapterNum = urlParams.get('chapter');
 
-			(window).load(function() {
-				var hash = window.location.hash;
-				console.log(hash);
-
-				// if (hash == "#parentHorizontalTab2") {
-					// var top = document.getElementById("Interface").offsetTop; //Getting Y of target element
-					// window.scrollTo(0, top);
-				// }
-			});
+			if (chapterNum) {
+				document.getElementById('genesis-' + chapterNum).scrollIntoView();
+			} else {
+				document.getElementById('genesis-' + sessionStorage.getItem('chapter_number')).scrollIntoView();
+			}
 		</script>
 
 		<div id="copyright">
