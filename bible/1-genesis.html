@@ -1780,8 +1780,10 @@
 
 			if (chapterNum) {
 				document.getElementById('genesis-' + chapterNum).scrollIntoView();
+				console.log('genesis-' + chapterNum);
 			} else {
 				document.getElementById('genesis-' + sessionStorage.getItem('chapter_number')).scrollIntoView();
+				console.log('genesis-' + sessionStorage.getItem('chapter_number'));
 			}
 		</script>
 
