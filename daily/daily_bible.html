@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css"/>
+
+    <script type="text/javascript" src="../scripts/script.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-3.4.1.min.js"></script>
+
+    <title>Reading Challenge</title>
+</head>
+
+<body>
+
+<div class="bible-text">
+    <h4 id="nt-title"></h4>
+    <p id="nt-text"></p>
+</div>
+
+<div class="bible-text">
+    <h4 id="ot-title"></h4>
+    <p id="ot-text"></p>
+</div>
+
+<script>
+    fetch('schedule.txt')
+        .then(response => response.text())
+        .then(text => {
+            const reading_split = text.split(";");
+
+            /* Get NT and OT text from RcV.json locally */
+            $.getJSON('../bible/RcV.json', function (data) {
+                let break_elem_two;
+                let break_elem;
+                let bold_sup_elem;
+                let j;
+                for (let i = 0; i < data.length; i++) {
+                    /* NT Title */
+                    const nt_split = reading_split[0].split(" ");
+                    if (nt_split[0] === "1" || nt_split[0] === "2" || nt_split[0] === "2") {
+                        nt_split[0] += " " + nt_split[1];
+                        nt_split[1] = nt_split[2];
+                        nt_split.splice(-1, 1)
+                    }
+                    const nt_book_title = nt_split[0];
+
+                    /* OT Title */
+                    const ot_split = reading_split[1].split(" ");
+                    ot_split.shift();
+                    if (ot_split[0] === "1" || ot_split[0] === "2") {
+                        ot_split[0] += " " + ot_split[1];
+                        ot_split[1] = ot_split[2];
+                        ot_split.splice(-1, 1)
+                    }
+                    const ot_book_title = ot_split[0];
+
+                    // console.log(nt_split);
+                    // console.log(nt_book_title);
+                    // console.log(ot_split);
+                    // console.log(ot_book_title);
+
+                    /* Add OT and NT Titles */
+                    document.getElementById("nt-title").innerHTML = nt_split.join(" ");
+                    document.getElementById("ot-title").innerHTML = ot_split.join(" ");
+
+                    /* NT Text */
+                    if (data[i].title === nt_book_title) {
+                        let nt_chapter = 0;
+                        let nt_start_verse = 0;
+                        let nt_end_verse = 0;
+
+                        if (nt_split[1].includes(":")) {
+                            /* Get Chapter */
+                            const nt_chapter_split = nt_split[1].split(":");
+                            nt_chapter = nt_chapter_split[0] - 1;
+
+                            /* Get Verse Start & End */
+                            const nt_verse_split = nt_chapter_split[1].split("-");
+                            nt_start_verse = nt_verse_split[0] - 1;
+                            nt_end_verse = nt_verse_split[1] - 1;
+                        } else {
+                            nt_chapter = nt_split[1] - 1;
+                            nt_end_verse = data[i].pages[nt_chapter].text.length - 1;
+                        }
+
+                        // console.log(nt_book_title);
+                        // console.log("Chapter: " + nt_chapter);
+                        // console.log("start: " + nt_start_verse);
+                        // console.log("end: " + nt_end_verse);
+
+                        document.getElementById("nt-text").innerHTML = ""
+                        for (j = nt_start_verse; j <= nt_end_verse; j++) {
+                            /* Bold & SuperScript Verse Number */
+                            bold_sup_elem = document.createElement("B");
+                            bold_sup_elem.innerHTML = "<sup>" + (j + 1) + "</sup>" + " ";
+                            document.getElementById("nt-text").appendChild(bold_sup_elem);
+
+                            /* Actual Verse */
+                            document.getElementById("nt-text").innerHTML += data[i].pages[nt_chapter].text[j];
+
+                            /* New Line Every Verse */
+                            break_elem = document.createElement("BR");
+                            document.getElementById("nt-text").appendChild(break_elem);
+                            break_elem_two = document.createElement("BR");
+                            document.getElementById("nt-text").appendChild(break_elem_two);
+                        }
+                    }
+
+                    /* OT Text: ["", "Neh", "12:27-47"] */
+                    else if (data[i].title === ot_book_title) {
+                        let ot_chapter = 0;
+                        let ot_start_verse = 0;
+                        let ot_end_verse = 0;
+
+                        if (ot_split[1].includes(":")) {
+                            /* Get Chapter */
+                            var ot_chapter_split = ot_split[1].split(":");
+                            ot_chapter = ot_chapter_split[0] - 1;
+
+                            /* Get Verse Start & End */
+                            var ot_verse_split = ot_chapter_split[1].split("-");
+                            ot_start_verse = ot_verse_split[0] - 1;
+                            ot_end_verse = ot_verse_split[1] - 1;
+                        } else {
+                            ot_chapter = ot_split[1] - 1;
+                            ot_end_verse = data[i].pages[ot_chapter].text.length - 1;
+                        }
+
+                        // console.log(ot_book_title);
+                        // console.log("Chapter: " + ot_chapter);
+                        // console.log("start: " + ot_start_verse);
+                        // console.log("end: " + ot_end_verse);
+
+                        document.getElementById("ot-text").innerHTML = ""
+                        for (j = ot_start_verse; j <= ot_end_verse; j++) {
+                            /* Bold & SuperScript Verse Number */
+                            bold_sup_elem = document.createElement("B");
+                            bold_sup_elem.innerHTML = "<sup>" + (j + 1) + "</sup>" + " ";
+                            document.getElementById("ot-text").appendChild(bold_sup_elem);
+
+                            /* Actual Verse */
+                            document.getElementById("ot-text").innerHTML += data[i].pages[ot_chapter].text[j];
+
+                            /* New Line Every Verse */
+                            break_elem = document.createElement("BR");
+                            document.getElementById("ot-text").appendChild(break_elem);
+                            break_elem_two = document.createElement("BR");
+                            document.getElementById("ot-text").appendChild(break_elem_two);
+                        }
+                    }
+                }
+            });
+        });
+</script>
+
+<div id="copyright" class="fade-in">
+    <copyright>Verses accessed from the Holy Bible Recovery Version (text-only edition) © 2020 Living Stream Ministry
+        www.lsm.org
+    </copyright>
+</div>
+
+</body>
+</html>
