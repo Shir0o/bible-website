@@ -74,9 +74,9 @@
 		      var full_title = '';
                       console.log('ot: ', ot_split);
                       console.log('nt: ', nt_split);
-                      if (ot_split.length === 0) {
+                      if (!ot_split[0]) {
                         full_title = nt_split.join(" ");
-                      } else if (nt_split.length === 0) {
+                      } else if (!nt_split[0]) {
                         full_title = ot_split.join(" ");
                       } else {
                         full_title = nt_split.join(" ") + "; " + ot_split.join(" ");
