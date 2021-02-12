@@ -71,13 +71,15 @@
                       ot_split[0] = ot_book_title;
 
                       /* Add to Screen and sessionStorage */
-                      console.log(ot_split);
+		      var full_title = '';
+                      console.log('ot: ', ot_split);
+                      console.log('nt: ', nt_split);
                       if (ot_split.length === 0) {
-                        var full_title = nt_split.join(" ");
+                        full_title = nt_split.join(" ");
                       } else if (nt_split.length === 0) {
-                        var full_title = ot_split.join(" ");
+                        full_title = ot_split.join(" ");
                       } else {
-                        var full_title = nt_split.join(" ") + "; " + ot_split.join(" ");
+                        full_title = nt_split.join(" ") + "; " + ot_split.join(" ");
                       }
                       document.getElementById(reading_id).getElementsByTagName('p')[0].innerHTML = full_title;
                   }
