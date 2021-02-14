@@ -22,6 +22,79 @@ document.addEventListener('swiped-left', function(e) {
     window.history.back();
 });
 
+function old_or_new_testament(title) {
+  switch (title) {
+    case "Genesis":
+    case "Exodus":
+    case "Leviticus":
+    case "Numbers":
+    case "Deuteronomy":
+    case "Joshua":
+    case "Judges":
+    case "Ruth":
+    case "1 Samuel":
+    case "2 Samuel":
+    case "1 Kings":
+    case "2 Kings":
+    case "1 Chronicles":
+    case "2 Chronicles":
+    case "Ezra":
+    case "Nehemiah":
+    case "Esther":
+    case "Job":
+    case "Psalms":
+    case "Proverbs":
+    case "Ecclesiastes":
+    case "Song of Songs":
+    case "Isaiah":
+    case "Jeremiah":
+    case "Lamentations":
+    case "Ezekiel":
+    case "Daniel":
+    case "Hosea":
+    case "Joel":
+    case "Amos":
+    case "Obadiah":
+    case "Jonah":
+    case "Micah":
+    case "Nahum":
+    case "Habakkuk":
+    case "Zephaniah":
+    case "Haggai":
+    case "Zechariah":
+    case "Malachi":
+      return "Old";
+    case "Matthew":
+    case "Mark":
+    case "Luke":
+    case "John":
+    case "Acts":
+    case "Romans":
+    case "1 Corinthians":
+    case "2 Corinthians":
+    case "Galatians":
+    case "Ephesians":
+    case "Philippians":
+    case "Colossians":
+    case "1 Thessalonians":
+    case "2 Thessalonians":
+    case "1 Timothy":
+    case "2 Timothy":
+    case "Titus":
+    case "Philemon":
+    case "Hebrews":
+    case "James":
+    case "1 Peter":
+    case "2 Peter":
+    case "1 John":
+    case "2 John":
+    case "3 John":
+    case "Jude":
+    case "Revelation":
+      return "New";
+  }
+}
+
 
 function get_full_book_name(short_book_title) {
     switch (short_book_title) {
