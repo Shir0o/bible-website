@@ -72,13 +72,15 @@
 				
 				if (reading_split.length === 1) {
 					var split = reading_split[0].split(' ');
+					var oldOrNew = '';
 					
 					if (split[0] === '1' || split[0] === '2' || split[0] === '3') {
-					    split[0] = split[1];
-					    console.log('split: ', split);
+					    oldOrNew = old_or_new_testament(split[1]);
+					} else {
+					    oldOrNew = old_or_new_testament(split[1]);
 					}
 					
-					if (old_or_new_testament(split[0]) === 'Old') {
+					if (oldOrNew === 'Old') {
 						console.log('old');
 						/* OT Title */
 						ot_split = reading_split[0].split(" ");
@@ -89,7 +91,7 @@
 							ot_split.splice(-1, 1)
 						}
 						ot_book_title = ot_split[0];
-					} else if (old_or_new_testament(split[0]) === 'New') {
+					} else if (oldOrNew === 'New') {
 						console.log('new');
 						/* NT Title */
 						nt_split = reading_split[0].split(" ");
