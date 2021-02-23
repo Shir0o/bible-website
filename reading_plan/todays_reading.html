@@ -69,6 +69,7 @@
 				if (reading_split.length === 1) {
 					var split = reading_split[0].split(' ');
 					if (old_or_new_testament(split[0]) === 'Old') {
+						console.log('old');
 						/* OT Title */
 						ot_split = reading_split[0].split(" ");
 						ot_split.shift();
@@ -79,6 +80,7 @@
 						}
 						ot_book_title = ot_split[0];
 					} else if (old_or_new_testament(split[0]) === 'New') {
+						console.log('new');
 						/* NT Title */
 						nt_split = reading_split[0].split(" ");
 						if (nt_split[0] === "1" || nt_split[0] === "2" || nt_split[0] === "2") {
