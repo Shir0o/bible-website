@@ -67,8 +67,8 @@
 				var nt_book_title = '';
 				var ot_book_title = '';
 				
-				console.log(reading);
-				console.log(reading_split);
+				console.log('reading: ', reading);
+				console.log('reading_split ', reading_split);
 				
 				if (reading_split.length === 1) {
 					var split = reading_split[0].split(' ');
@@ -115,10 +115,10 @@
 					ot_book_title = ot_split[0];
 				}
 
-				console.log(nt_split);
-				console.log(nt_book_title);
-				console.log(ot_split);
-				console.log(ot_book_title);
+				console.log('nt_split: ', nt_split);
+				console.log('nt_book_title: ', nt_book_title);
+				console.log('ot_split: ', ot_split);
+				console.log('ot_book_title: ', ot_book_title);
 
 				/* Add OT and NT Titles */
 				document.getElementById("nt-title").innerHTML = nt_split.join(" ");
