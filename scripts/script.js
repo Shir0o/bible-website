@@ -23,6 +23,7 @@ document.addEventListener('swiped-left', function (e) {
 });
 
 function old_or_new_testament(title) {
+  console.log('title: ', title);
   switch (title) {
     case "Genesis":
     case "Exodus":
@@ -32,12 +33,9 @@ function old_or_new_testament(title) {
     case "Joshua":
     case "Judges":
     case "Ruth":
-    case "1 Samuel":
-    case "2 Samuel":
-    case "1 Kings":
-    case "2 Kings":
-    case "1 Chronicles":
-    case "2 Chronicles":
+    case "Samuel":
+    case "Kings":
+    case "Chronicles":
     case "Ezra":
     case "Nehemiah":
     case "Esther":
@@ -70,25 +68,19 @@ function old_or_new_testament(title) {
     case "John":
     case "Acts":
     case "Romans":
-    case "1 Corinthians":
-    case "2 Corinthians":
+    case "Corinthians":
     case "Galatians":
     case "Ephesians":
     case "Philippians":
     case "Colossians":
-    case "1 Thessalonians":
-    case "2 Thessalonians":
-    case "1 Timothy":
-    case "2 Timothy":
+    case "Thessalonians":
+    case "Timothy":
     case "Titus":
     case "Philemon":
     case "Hebrews":
     case "James":
-    case "1 Peter":
-    case "2 Peter":
-    case "1 John":
-    case "2 John":
-    case "3 John":
+    case "Peter":
+    case "John":
     case "Jude":
     case "Revelation":
       return "New";
