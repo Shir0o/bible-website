@@ -677,82 +677,82 @@
     },
     {
         "reading": ";Ezra 6",
-        "date": "2021-06-19T05:00:00.000Z"
-    },
-    {
-        "reading": ";Ezra 7",
-        "date": "2021-06-20T05:00:00.000Z"
-    },
-    {
-        "reading": ";Ezra 8",
         "date": "2021-06-21T05:00:00.000Z"
     },
     {
-        "reading": ";Ezra 9",
+        "reading": ";Ezra 7",
         "date": "2021-06-22T05:00:00.000Z"
     },
     {
-        "reading": ";Ezra 10",
+        "reading": ";Ezra 8",
         "date": "2021-06-23T05:00:00.000Z"
     },
     {
-        "reading": ";Neh 1",
+        "reading": ";Ezra 9",
         "date": "2021-06-24T05:00:00.000Z"
     },
     {
-        "reading": ";Neh 2",
+        "reading": ";Ezra 10",
         "date": "2021-06-25T05:00:00.000Z"
     },
     {
-        "reading": ";Neh 3",
-        "date": "2021-06-26T05:00:00.000Z"
-    },
-    {
-        "reading": ";Neh 4",
-        "date": "2021-06-27T05:00:00.000Z"
-    },
-    {
-        "reading": ";Neh 5",
+        "reading": ";Neh 1",
         "date": "2021-06-28T05:00:00.000Z"
     },
     {
-        "reading": ";Neh 6",
+        "reading": ";Neh 2",
         "date": "2021-06-29T05:00:00.000Z"
     },
     {
-        "reading": ";Neh 7",
+        "reading": ";Neh 3",
         "date": "2021-06-30T05:00:00.000Z"
     },
     {
-        "reading": ";Neh 8",
+        "reading": ";Neh 4",
         "date": "2021-07-01T05:00:00.000Z"
     },
     {
-        "reading": ";Neh 9",
+        "reading": ";Neh 5",
         "date": "2021-07-02T05:00:00.000Z"
     },
     {
-        "reading": ";Neh 10",
-        "date": "2021-07-03T05:00:00.000Z"
-    },
-    {
-        "reading": ";Neh 11",
-        "date": "2021-07-04T05:00:00.000Z"
-    },
-    {
-        "reading": ";Neh 12",
+        "reading": ";Neh 6",
         "date": "2021-07-05T05:00:00.000Z"
     },
     {
-        "reading": ";Neh 13",
+        "reading": ";Neh 7",
         "date": "2021-07-06T05:00:00.000Z"
     },
     {
-        "reading": ";Hag 1",
+        "reading": ";Neh 8",
         "date": "2021-07-07T05:00:00.000Z"
     },
     {
-        "reading": ";Hag 2",
+        "reading": ";Neh 9",
         "date": "2021-07-08T05:00:00.000Z"
+    },
+    {
+        "reading": ";Neh 10",
+        "date": "2021-07-09T05:00:00.000Z"
+    },
+    {
+        "reading": ";Neh 11",
+        "date": "2021-07-12T05:00:00.000Z"
+    },
+    {
+        "reading": ";Neh 12",
+        "date": "2021-07-13T05:00:00.000Z"
+    },
+    {
+        "reading": ";Neh 13",
+        "date": "2021-07-14T05:00:00.000Z"
+    },
+    {
+        "reading": ";Hag 1",
+        "date": "2021-07-15T05:00:00.000Z"
+    },
+    {
+        "reading": ";Hag 2",
+        "date": "2021-07-16T05:00:00.000Z"
     }
 ]
