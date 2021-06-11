@@ -26,7 +26,7 @@
         /* Set Reading Plan from local JSON file and current Date */
         /* JSON: "date": "2020-08-26T05:00:00.000Z" */
         // var date = new Date();
-        var date = new Date("July 8, 2021 00:00:00");
+        var date = new Date("June 14, 2021 00:00:00");
         $.getJSON('reading_plan/reading_plan.json', function (data) {
             for (var i = 0; i < data.length; i++) {
                 /* Match Today's Date */
@@ -64,7 +64,7 @@
                         /* OT Title */
                         var ot_split = reading_split[1].split(" ");
                         // ot_split.shift();
-                        console.log(ot_split)
+                        console.log(reading_split[1].split(" "))
                         if (ot_split[0] === "1" || ot_split[0] === "2") {
                             ot_split[0] += " " + ot_split[1];
                             ot_split[1] = ot_split[2];
@@ -386,7 +386,7 @@
         const shortMonthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
         var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         // const d = new Date();
-        var d = new Date("July 8, 2021 00:00:00");
+        var d = new Date("June 14, 2021 00:00:00");
         for (var i = 0; i < 15; i++) {
             /* Subtract the Days */
             if (i !== 0) {
