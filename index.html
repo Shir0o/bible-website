@@ -82,7 +82,11 @@
                         } else {
                             full_title = nt_split.join(" ") + "; " + ot_split.join(" ");
                         }
-                        document.getElementById(reading_id).getElementsByTagName('p')[0].innerHTML = full_title;
+                        if (full_title) {
+                            document.getElementById(reading_id).getElementsByTagName('p')[0].innerHTML = full_title;
+                        } else {
+                            document.getElementById(reading_id).getElementsByTagName('p')[0].innerHTML = "Catch up or rest";
+                        }
                     }
                 }
 
